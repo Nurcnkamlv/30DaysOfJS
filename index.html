@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="Charset-UTF-8">
+    <title>30DaysOfScript:Inline Script</title>
+  </head>
+  <body>
+    <button onclick="alert('Welcome to 30OfJavaScript!')">Click Me</button> <br>
+    <input type="button"  onclick="myFunction();" value="button"> 
+    <p id="result">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloribus fugit iure alias, quam assumenda?</p>
+  
+  
+  
+    <p id="result"></p>
+    <input type="text" id="mitderm"> <br/> <br/>
+    <input type="text" id="final"> <br/> <br/>
+    <button type="button" onclick="noteResult();">Click</button>
+
+    <script >
+     
+  
+  function noteResult() {
+      var mitdermExam,  finalExam, avarage, message ;
+      mitdermExam = Number(document.getElementById("mitderm").value);
+      finalExam = Number(document.getElementById("final").value);
+      avarage =mitdermExam*0.3 + finalExam*0.7;
+      
+    if (isNan(mitdermExam)) {
+       message = "final notu rakam girin"
+    }
+    else if(isNan(finalExam)){
+     message = "vize notunuz rakam olsun"
+    }  
+    else{
+      message = (avarage > 60)? "Imtahandan gecdiniz" : "Imthandan gecemedinzi";
+    }
+    document.getElementById("result").innerHTML= message;
+  }
+        /*
+        let name = 'mahammad '
+        let surname = 'kamilov'
+        let fullName = `${name} ${surname}`
+        
+     
+        document.write(fullName)
+     
+     let name = "prototurk"
+    //  substr(from , length) = burda baslangicdan sonra olcu verilir.
+    document.write(name.toLowerCase() + "<br/>")
+    // substring(start index , stop index) = burda umuzu uzunluqa gore deyer verilir
+    document.write(name.substr(3, 2))
+    document.write(name.substring(3, 5) + "<br/>")
+    // split('') = sozu array halina getirir. Icerisinde '', ' ', ',' - istofade edilir
+    // reverse() = sozu ters yazir.
+    // join('') = sozu birlesdiri.
+    // includes('') = yazinin varaibles olunb olmadigina baxir.
+    //  startsWith('') = sozun ne ile basladigini yaziriq true or false verir.
+    // endsWith('') = Sozun ne ile bitdiyini yaziriq true or false verir.
+    let _ababa = 'men azerbaycan vetandsai yam'
+    document.write(_ababa.startsWith( 'bsahs'))
+    document.write(_ababa.endsWith( 'bsahs'))
+     document.write(_ababa.includes('men'))
+     document.write(_ababa.includes('yam'))
+     document.write(_ababa.includes('Azeybaycan'))
+     document.write(_ababa.includes('djsakdns'))
+    
+
+     let promoKamp = "men bu gun men bakidan rayona geldim. her sey\
+     cox men gozle id. Men sevdim burani."
+      
+     console.log(promoKamp.match(/men/gi))
+    //    /name/globalinitiliazator = global - hamisi , i- boyuk kicik herf ferq etmir
+    //   / \d+/g  = text icerisindegi reqemleri tapir 
+    
+
+    let string = '30 Days Of JavaScript '
+
+    console.log(string) 
+   console.log(string.replace('JavaScript', 'Python'))
+    console.log(string.length)
+    console.log(string.toUpperCase())
+    console.log(string.toLowerCase())
+    console.log(string.substr(3, 5))
+    console.log(string.substring(3, 8))
+   console.log(string.substr(3, 19))
+   console.log(string.includes('Script'))
+   console.log(string.split())
+   console.log(string.split(' '))
+   console.log(string.charAt(15))
+   console.log(string.charCodeAt('J'))
+   console.log(string.lastIndexOf('a'))
+   console.log(string.startsWith(30))
+   console.log(string.endsWith('Python'))
+   console.log(string.match('a'))
+   console.log(string.repeat(2))
+   let amaka = 'You cannot end a sentence with because because because is a conjunction'
+   console.log(amaka.indexOf('because'))
+   let oops = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' 
+   console.log(oops.split(' '))
+
+//    level 2
+  console.log('There is no exercise better for the heart than reaching down and lifting people up.' )
+console.log("Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead.")
+  
+let a= '10'
+let b =10
+ if (a === b){
+     console.log("exactly equal")
+ }else{
+    console.log("Not exactly equal")
+ }
+
+ let c = '9.8'
+ if(parseFloat('9.8' == 10)){
+     console.log("exactly equal")
+ }else{
+    console.log("Not exactly equal")
+ }
+
+ let combat = 'I hope this course is not full of jargon'
+  if(combat.includes('jargon')){
+      console.log("true")
+  }else{
+    console.log("false")
+  }
+
+  let boromo = Math.floor( Math.random() *101)
+  console.log(boromo)
+  let mortol = Math.floor( Math.random() *101)
+  let snap = Math.floor( Math.random() *51)
+  let snapMortal = Math.floor( Math.random() *91) +  Math.floor( Math.random() *11)
+
+  let mama = Math.floor(Math.random() * 256)
+  console.log(mama)
+  console.log(snapMortal)
+
+  let manipaluthm = ['J','a', 'v','a','S','c','r','i','p','t'];
+  let i ;
+  
+  for ( i = Math.floor(Math.random() * 11); i< manipaluthm.length; i++) {
+      const element = manipaluthm[i];
+      console.log(element);
+      
+  }
+
+  let papa = 'You cannot end a sentence with because because because is a conjunction'
+   console.log(papa.substr(31, 24))
+
+   console.log(papa.match('because')) 
+   
+
+   let a = confirm('basarilini silin')
+   
+   if(a == true){
+       console.log('islem basarili oldu')
+   }else{
+       console.log('isllem basarili olmadi')
+   }
+//    yuxarida yazdigimizin qisa formasi eger if ve else true false olarsa ic ice yazim
+
+const date = new Date()
+
+ let year = date.getFullYear() ,
+     month = date.getMonth(),
+     dayName = date.getDay(),
+     minute = date.getMinutes(),
+     second = date.getSeconds(),
+     hour = date.getHours(),
+     day = date.getDate()
+     
+ 
+let months = [
+     "january",
+     "fabrary",
+     "march",
+     "april",
+     "may",
+     "uyun",
+     "yulu",
+     "agustos",
+     "septemper",
+     "octaber",
+     "november",
+     "december" 
+ ]
+
+ let days =[
+     "monday",
+     "sunday",
+     "thuesday",
+     "threeday",
+     "fiveday",
+     "sixday",
+     "pazar",
+ ]
+
+let humanReadableDate =  `${day} ${months[month]} ${year} , ${days[dayName]}, ${hour}:${minute}:${second}`
+console.log( humanReadableDate)
+
+//  12 ocak 2021, pazar, 12:21:33
+
+  
+
+function myFunction() {
+    document.getElemenyById('#result').innerHTML = 'men javascript olaraq html ele kecirdim';
+}
+
+*/
+
+    </script>
+  
+  </body>
+</html>
